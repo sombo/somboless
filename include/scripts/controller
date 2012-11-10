@@ -1,0 +1,15 @@
+#!/bin/bash
+controller_name=$1
+
+toLower() {
+	echo $1 | tr "[:upper:]" "[:lower:]"
+}
+
+low=`toLower $controller_name`
+file=$low"_controller"
+
+mkdir ../../controllers
+cat resources/controller.txt | sed "s/repMe/$1/" > "temp.txt"
+cat temp.txt | sed "s/repme/$low/" > "../../controllers/$file.php"
+
+

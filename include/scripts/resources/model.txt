@@ -1,0 +1,21 @@
+
+<?
+
+require_once('../include/Database.php');
+
+class repMe extends Database{
+
+	function __construct($records = null){
+		parent::__construct("repme",$records,true);
+		
+		//$this->tableRecord = null;
+
+		
+	}
+
+}
+
+
+
+
+?>

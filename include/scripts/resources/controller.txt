@@ -1,0 +1,54 @@
+<?
+require_once('../models/repMe.php');
+require_once('../include/Controller.php');
+
+// /**
+// * 
+// */
+class repme_controller extends Controller
+{
+	
+	public $obj ;
+	
+	function __construct($hasModel){
+		$this->Page_Title = "Welcome";
+
+		$this->obj = new repMe();
+
+		parent::__construct($hasModel);
+
+	}
+	
+	function create(){
+		$this->lead = "Create new repMe";
+		$this->render("new");
+	}
+
+	function index(){
+		$this->lead = "All repMe";
+		$this->render("index");
+		
+	}
+
+	function show(){
+		$this->obj =  new repMe($this->d->Find_By($_GET["id"]));
+		$this->render("show");
+	}
+
+	function edit(){
+		$this->lead = "Edit repMe";
+		$this->obj =  new repMe($this->d->Find_By($_GET["edit"]));
+		$this->render("edit");
+	}
+	function delete(){
+		$this->obj = new repMe($this->d->Find_By($_POST["delete"]));
+		if($this->obj->Delete())
+			$this->ajax("ok");
+
+		else
+			 $this->ajax($_SESSION["errors"]);
+	}
+}
+
+	$a = new repme_controller(true);
+?>

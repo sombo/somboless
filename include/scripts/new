@@ -1,0 +1,34 @@
+#!/bin/bash
+if [ -z "$1" ];
+	then
+	echo "you must enter a name for the project"
+	exit 1
+fi
+site_name=$1
+
+mkdir $site_name
+echo $site_name"/ Created Successfuly"
+mkdir $site_name/models
+echo $site_name"/models/ Created Successfuly"
+mkdir $site_name/controllers
+echo $site_name"/controllers/ Created Successfuly"
+mkdir $site_name/views
+echo $site_name"/views/ Created Successfuly"
+mkdir $site_name/views/layouts
+echo -e "\033[COLORm" $site_name"/layouts/ Created Successfuly"
+cp -R $HOME/php_projects/somboless/* $site_name/
+if [ "$2" = "-nd" ]; 
+	then
+	rm -R $site_name/views/shared $site_name/assets
+	mkdir $site_name/assets $site_name/assets/stylesheets $site_name/assets/js
+	cp $HOME/php_projects/somboless/assets/stylesheets/* $site_name/assets/stylesheets/
+	cp $HOME/php_projects/somboless/assets/js/js/* $site_name/assets/js/
+
+fi
+
+echo "Copying files done successfuly"
+cat $HOME/php_projects/somboless/include/scripts/resources/htaccess.txt | sed "s/repMe/$site_name/" > $site_name"/.htaccess"
+# cp $HOME/php_projects/somboless/.htaccess $site_name/
+
+
+

@@ -1,0 +1,4 @@
+<?
+include("/copier/root.php");
+
+?>

@@ -1,0 +1,192 @@
+<?
+//$server_name=$_SERVER['SERVER_NAME'] . ':81';
+$server_name=$_SERVER['SERVER_NAME'];
+$_serv="http://" . $server_name;
+include_once ($_SERVER['DOCUMENT_ROOT']."/boot/functions_boot.php");
+
+?><!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Bootstrap for PHP developers beta 0.1</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+ <? include_once ($_SERVER['DOCUMENT_ROOT']."/boot/top.php");?>
+  </head>
+
+  <body>
+<?
+// MAKE NAVIGATION
+$_nav['Home']="index.php";
+$_nav['Page 1']="index.php";
+$_nav['Page 2']="index.php";
+$_nav['Page 3']="index.php";
+
+// MAKE DROPDOWNS
+
+$_ndd['Page 1']['Home']="index.php";
+$_ndd['Page 1']['Page 1']="index.php";
+$_ndd['Page 1']['Page 2']="index.php";
+$_ndd['Page 1']['_divider']="";
+$_ndd['Page 1']['Page 3']="index.php";
+$_ndd['Page 1']['Page 4']="index.php";
+$_ndd['Page 1']['_divider']="";// you can't have two dividers
+$_ndd['Page 1']['Page 5']="index.php";
+
+$_ndd['Page 2']['Page 5']="index.php";
+$_ndd['Page 2']['_divider']="";
+$_ndd['Page 2']['Page 6']="index.php";
+$_nav_active='Page 1';
+
+make_nav_simple ($_nav,$_nav_active,$_ndd);
+?>
+  <div class="container">
+
+
+<header class="jumbotron subhead" id="overview">
+  <h1>BOOTSTRAP FOR PHP DEVELOPERS </h1>
+  <p class="lead">&quot;When i have an idea, I want to build the prototype as quick as posible.&quot;</p>
+   <p class="lead">By Yianis Giannopoulos ... beta version 0.1.</p>
+   <p class="lead"><a href="http://code.google.com/p/bootstrap-for-php-developers/">Download from here</a></p>
+    <p><? fb_like('http://www.keacode.com/boot'); ?></p>
+<p>  This is a quick way to use bootstrat. Perfect for php application prototyping, no need to write any html or open the bootstrap documentation ! Download, and you are ready to start in 1 min.</p>
+ 
+  </header> 
+<?
+//make_nav_simple ($_nav,$_nav_active,$_dd);
+
+?>
+
+<h1>Starting a new project.</h1>
+Simply copy paste this on the head of your page.
+<pre>
+include_once ($_SERVER['DOCUMENT_ROOT']."/boot/functions_boot.php");
+include_once ($_SERVER['DOCUMENT_ROOT']."/boot/top.php");
+</pre>
+Then, add this at the bottom of your page just before closing the body tag.
+<pre>
+ include_once ($_SERVER['DOCUMENT_ROOT']."/boot/bot.php");
+</pre>
+It includes all the javascript libraries you will need, so you are ready to go. Once the project is ready, then you can remove the unwanted libraries from bot.php ;) ...
+
+<h1>Top navigation</h1>
+This is a special navigation. It has black background. And it doesn't like chocolate. Its being cooked like than in the oven for 10m.
+
+<pre>
+// MAKE NAVIGATION
+$_nav['Home']="index.php";
+$_nav['Page 1']="index.php";
+$_nav['Page 2']="index.php";
+$_nav['Page 3']="index.php";
+// MAKE DROPDOWNS
+
+$_ndd['Page 1']['Home']="index.php";
+$_ndd['Page 1']['Page 1']="index.php";
+$_ndd['Page 1']['Page 2']="index.php";
+$_ndd['Page 1']['_divider']="";
+$_ndd['Page 1']['Page 3']="index.php";
+$_ndd['Page 1']['Page 4']="index.php";
+$_ndd['Page 1']['_divider']="";// you can't have two dividers
+$_ndd['Page 1']['Page 5']="index.php";
+
+$_ndd['Page 2']['Page 5']="index.php";
+$_ndd['Page 2']['_divider']="";
+$_ndd['Page 2']['Page 6']="index.php";
+$_nav_active='Page 1';
+
+make_nav_simple ($_nav,$_nav_active,$_ndd);
+</pre>
+Bug: the nav_active on the dropdowns it doesnt work. Who said the boot strap works fine and you can do anytihng ? Try some buttons with dropdown on the top nav:P
+
+<h1>Sub navigation</h1>
+Here it goes something little like this
+<?
+	nav_dropdown($_nav,$_ndd);
+?>
+Proudly made with
+<pre>
+	nav_dropdown($_nav,$_ndd);
+</pre>
+
+Note that im using the same data with the top navigation.
+
+
+<h1>Buttons</h1>
+Who likes to remember that warning makes a red button ? Use this functions on your apps and use: red,blue,green,teal,orange.
+<pre>
+button('Red','#',red,$size);
+</pre>
+<?
+button('Red','#','red',$size,'');
+?>
+
+<h1>Small tutorial on  layouts</h1>
+<h2>Fixed layout</h2>
+<div class="container">
+   The default and simple 940px-wide, centered layout for just about any website or page provided by a single <pre>class="container"</pre>
+  </div>
+<h2>Fluid layout</h2>
+<div class="container-fluid">
+  <div class="row-fluid">
+    <div class="span2">
+     This side bar has span2. gives flexible page structure, min- and max-widths, and a left-hand sidebar. It's great for apps and docs.
+    </div>
+    <div class="span10">
+    This is SPAN 10.
+    <pre>class="container-fluid"</pre> gives flexible page structure, min- and max-widths, and a left-hand sidebar. It's great for apps and docs.
+ <br/> Remeber ... 10+2=12 !
+    </div>
+  </div>
+</div>
+<h1>Button dropdowns</h1>
+<pre>
+$_dd['Cyan']['Home']="index.php";
+$_dd['Cyan']['Page 1']="index.php";
+$_dd['Cyan']['Page 2']="index.php";
+$_dd['Cyan']['_divider']="";
+$_dd['Cyan']['Page 3']="index.php";
+$_dd['Cyan']['Page 4']="index.php";
+$_dd['Cyan']['_divider']="";
+$_dd['Cyan']['Page 5']="index.php";
+
+button('Cyan','#','teal',$size,$_dd);
+</pre>
+<?
+$_dd['Cyan']['Home']="index.php";
+$_dd['Cyan']['Page 1']="index.php";
+$_dd['Cyan']['Page 2']="index.php";
+$_dd['Cyan']['_divider']="";
+$_dd['Cyan']['Page 3']="index.php";
+$_dd['Cyan']['Page 4']="index.php";
+$_dd['Cyan']['_divider']="";
+$_dd['Cyan']['Page 5']="index.php";
+
+button('Cyan','#','teal',$size,$_dd);
+?>
+
+<h1>Do you like ?</h1>
+Fastest way to add a like button. It using the iframe solution.
+<pre>
+fb_like('http://www.keacode.com/boot');
+</pre>
+<p><? fb_like('http://www.keacode.com/boot'); ?></p>
+
+ <!-- Footer
+      ================================================== -->
+      <footer class="footer">
+        <p class="pull-right"><a href="#">Back to top</a></p>
+        <p>Designed and built with all the laziness in the world</p>
+        <p>Code licensed under the <a href="http://www.apache.org/licenses/LICENSE-2.0" target="_blank">Apache License v2.0</a>. Documentation licensed under <a href="http://creativecommons.org/licenses/by/3.0/">CC BY 3.0</a>.</p>
+        <p>Icons from <a href="http://glyphicons.com">Glyphicons Free</a>, licensed under <a href="http://creativecommons.org/licenses/by/3.0/">CC BY 3.0</a>.</p>
+      </footer>
+
+
+
+    </div> <!-- /container -->
+
+ <? include_once ($_SERVER['DOCUMENT_ROOT']."/boot/bot.php");?>
+ 
+  </body>
+</html>

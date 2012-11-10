@@ -1,0 +1,17 @@
+#!/bin/bash
+
+model_name=$1
+
+toLower() {
+	echo $1 | tr "[:upper:]" "[:lower:]"
+}
+
+low=`toLower $model_name`
+mkdir ../models
+cat resources/model.txt | sed "s/repMe/$1/" > "temp.txt"
+cat temp.txt | sed "s/repme/$low/" > "../models/$1.php"
+
+
+# GENDER=MALE
+# GENDER=`toUpper $1`
+# echo $GENDER

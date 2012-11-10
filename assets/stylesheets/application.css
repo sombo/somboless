@@ -1,0 +1,90 @@
+a{
+	margin-right: 5px;
+}
+li{
+	list-style: none;
+}
+body{
+	text-align: right;
+}
+span{
+	display: block;
+}
+#debug_Status{
+	border: 1px solid green;
+	background-color: #ddd;
+	clear: both;
+}
+.lead{
+font-style: italic;
+}
+.subhead{
+	padding: 18px;
+}
+.foot{
+	padding: 20px 0;
+	margin-top: 70px;
+	border-top: 1px solid #E5E5E5;
+	background-color: whiteSmoke;
+}
+.heb{
+	text-align: right;
+	
+}
+.body{
+	overflow: scroll;
+}
+.nav {
+	float:none;
+}
+.brand{
+	float:left;!important;
+}
+.timestamp{
+	font-size: 12px;
+	font-style: italic;
+	color: gray;
+}
+#act{
+	display: inline;
+}
+.action{
+	font-size: 12px;
+	margin-right: 0;
+	padding-left: 3px;
+}
+.all_Objects{
+	border: 1px solid #EFF;
+	background-color: #DDD;
+	margin-top: 3px;
+	width: 150px;
+	float: left;
+	margin-bottom: 10px;
+	margin-right: 20px;
+}
+.form{
+	margin-top: 30px;
+	/*width: 380px;*/
+	border: 1px solid #ddd;
+	font-family: "Arial, Helvetica, sans-serif";
+}
+.form h3{text-align: center;}
+input[type="button"], input[type="submit"], input[type="reset"] {
+	width:100px;
+}
+.controls{
+	text-align: center;
+	
+}
+#tblForm{margin:auto;}
+select{width:155px;}
+input{width:150px;}
+.error_array{
+	/*font-size: 10px;*/
+	font-family: arial;
+	background: #C10;
+}
+.info_array{
+	font-family: arial;
+	background: #C90;
+}
