@@ -2,14 +2,15 @@
 
 	model_name=$1
 	#2
-	php include/scripts/create_migration_file.php $1 $2 $3 $4 $5 $6 $7 $8 $9
+	php $HOME/Somboless/include/scripts/create_migration_file.php $1 $2 $3 $4 $5 $6 $7 $8 $9
 	mysql -u root -pshhzh22sombo -D test < migrate.sql
 
 	low=`toLower $model_name`
 	mkdir ../models
-	cat include/scripts/resources/model.txt | sed "s/repMe/$1/" > "temp.txt"
-	cat temp.txt | sed "s/repme/$low/" > "../models/$1.php"
+	cat $HOME/Somboless/include/scripts/resources/model.txt | sed "s/repMe/$1/" > "temp.txt"
+	cat temp.txt | sed "s/repme/$low/" > "models/$1.php"
 
+	rm temp.txt migrate.sql
 toLower() {
 	echo $1 | tr "[:upper:]" "[:lower:]"
 }

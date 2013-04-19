@@ -8,8 +8,9 @@ toLower() {
 low=`toLower $controller_name`
 file=$low"_controller"
 
-mkdir ../../controllers
-cat resources/controller.txt | sed "s/repMe/$1/" > "temp.txt"
-cat temp.txt | sed "s/repme/$low/" > "../../controllers/$file.php"
+#mkdir ../../controllers
+cat $HOME/Somboless/include/scripts/resources/controller.txt | sed "s/repMe/$1/" > "temp.txt"
+cat temp.txt | sed "s/repme/$low/" > "controllers/$file.php"
+rm temp.txt
 
 

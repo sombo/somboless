@@ -1,6 +1,6 @@
 #!/bin/bash
-PATH=$PATH:$HOME/php_projects/somboless/include/scripts/
-if [ -z "$1" ]; 
+PATH=$PATH:$HOME/Somboless/include/scripts/
+if [ -z "$1" ];
 	then
 		echo -e "error\nUsage:less [genn/new] parmas"
 		exit 1
