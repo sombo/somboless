@@ -6,7 +6,7 @@ require_once('../Helpers/Inflect.php');
 * 
 */
 class Controller{
-	ssss
+	
 	public $site_name;
 	public $obj ;
 	public $model;
