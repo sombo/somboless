@@ -2,7 +2,7 @@
 
 	define('HOST', 'localhost');
 	define('USER', 'root');
-	define('PASS', 'shhzh22sombo');
+	define('PASS', '1234');
 	define('DB', 'copier');
 	
 	define('ROOT', $_SERVER['DOCUMENT_ROOT'] . '/copier/');	
